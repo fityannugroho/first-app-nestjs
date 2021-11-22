@@ -18,9 +18,7 @@ export class TeacherController {
   }
 
   @Get('/:teacherId/students')
-  getStudentsByTeacherId(
-    @Param('teacherId', ParseUUIDPipe) teacherId: string,
-  ): StudentDTO[] {
+  getStudentsByTeacherId(@Param('teacherId') teacherId: string): StudentDTO[] {
     return this.teacherService.getStudentsByTeacherId(teacherId);
   }
 }
